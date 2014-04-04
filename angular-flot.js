@@ -32,15 +32,17 @@ angular.module('angular-flot', []).directive('flot', function() {
       scope.$watch('dataset', function(dataset) {
         var plot;
         if (plot) {
-          return plot.setData(dataset);
+          var result = plot.setData(dataset);
+          plot.draw();
+          return result;
         } else {
           return plot = init();
         }
-      });
+      }, true);
       return scope.$watch('options', function() {
         var plot;
         return plot = init();
-      });
+      }, true);
     }
   };
 });
