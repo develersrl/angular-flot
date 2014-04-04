@@ -38,11 +38,15 @@ angular.module 'angular-flot', []
             # Watches
             #
 
-            scope.$watch 'dataset', (dataset) ->
+            onDatasetChanged = (dataset) ->
                 if plot
                     plot.setData dataset
                 else
                     plot = do init
 
-            scope.$watch 'options', ->
+            scope.$watch 'dataset', onDatasetChanged, true
+
+            onOptionsChanged = ->
                 plot = do init
+
+            scope.$watch 'options', onOptionsChanged, true
