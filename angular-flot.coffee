@@ -1,6 +1,6 @@
 angular.module 'angular-flot', []
     .directive 'flot', ->
-        restrict: 'E'
+        restrict: 'EA'
         template: '<div></div>'
         scope:
             dataset: '='
