@@ -43,3 +43,15 @@ In your view or template, add the `flot` directive, making sure to specify both 
 ```html
 <flot dataset="myData" options="myChartOptions"></flot>
 ```
+
+
+# Reference
+
+Directive attributes:
+
+* `dataset`: Name of a variable defined in the current $scope to be used as input dataset. See
+  <https://github.com/flot/flot/blob/master/API.md#data-format> for more information.
+* `options`: Name of an object defined in the current scope used to configure the chart. See
+  <https://github.com/flot/flot/blob/master/API.md#plot-options> for more information.
+* `width`: Chart width, e.g.: "100%" or "350px".
+* `height`: Chart height, e.g.: "100%" or "100px".
