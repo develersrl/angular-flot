@@ -18,7 +18,7 @@ First, make sure to add Flotchart to your project, as explained in [Flotchart's
 ReadMe](https://github.com/flot/flot/blob/master/README.md) since we don't bundle Flotcharts for
 you.
 
-Add `angular-beacon` to the list of dependencies in your Angular.JS application:
+Add `angular-flot` to the list of dependencies in your Angular.JS application:
 
 ```javascript
 angular.module('myapp', [
