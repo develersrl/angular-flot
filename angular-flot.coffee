@@ -9,7 +9,7 @@ angular.module 'angular-flot', []
             #
             # Options
             #
-
+            plot = null
             width = attributes.width || '100%'
             height = attributes.height || '100%'
 
@@ -41,6 +41,8 @@ angular.module 'angular-flot', []
             onDatasetChanged = (dataset) ->
                 if plot
                     plot.setData dataset
+                    plot.setupGrid()
+                    plot.draw()
                 else
                     plot = do init
 
