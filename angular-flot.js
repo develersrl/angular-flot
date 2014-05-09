@@ -8,7 +8,8 @@ angular.module('angular-flot', []).directive('flot', function() {
       options: '='
     },
     link: function(scope, element, attributes) {
-      var height, init, onDatasetChanged, onOptionsChanged, plotArea, width;
+      var height, init, onDatasetChanged, onOptionsChanged, plot, plotArea, width;
+      plot = null;
       width = attributes.width || '100%';
       height = attributes.height || '100%';
       if (!scope.dataset) {
@@ -30,16 +31,16 @@ angular.module('angular-flot', []).directive('flot', function() {
         return $.plot(plotArea, scope.dataset, scope.options);
       };
       onDatasetChanged = function(dataset) {
-        var plot;
         if (plot) {
-          return plot.setData(dataset);
+          plot.setData(dataset);
+          plot.setupGrid();
+          return plot.draw();
         } else {
           return plot = init();
         }
       };
       scope.$watch('dataset', onDatasetChanged, true);
       onOptionsChanged = function() {
-        var plot;
         return plot = init();
       };
       return scope.$watch('options', onOptionsChanged, true);
