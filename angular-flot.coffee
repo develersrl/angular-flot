@@ -5,6 +5,7 @@ angular.module 'angular-flot', []
         scope:
             dataset: '='
             options: '='
+            callback: '='
         link: (scope, element, attributes) ->
             #
             # Options
@@ -32,7 +33,10 @@ angular.module 'angular-flot', []
                 height: height
 
             init = ->
-                $.plot plotArea, scope.dataset, scope.options
+                plotObj = $.plot plotArea, scope.dataset, scope.options
+                if scope.callback
+                    scope.callback(plotObj);
+                plotObj
 
             #
             # Watches
