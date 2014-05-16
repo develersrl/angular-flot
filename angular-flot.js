@@ -5,7 +5,8 @@ angular.module('angular-flot', []).directive('flot', function() {
     template: '<div></div>',
     scope: {
       dataset: '=',
-      options: '='
+      options: '=',
+      callback: '='
     },
     link: function(scope, element, attributes) {
       var height, init, onDatasetChanged, onOptionsChanged, plot, plotArea, width;
@@ -28,7 +29,12 @@ angular.module('angular-flot', []).directive('flot', function() {
         height: height
       });
       init = function() {
-        return $.plot(plotArea, scope.dataset, scope.options);
+        var plotObj;
+        plotObj = $.plot(plotArea, scope.dataset, scope.options);
+        if (scope.callback) {
+          scope.callback(plotObj);
+        }
+        return plotObj;
       };
       onDatasetChanged = function(dataset) {
         if (plot) {
