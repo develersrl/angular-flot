@@ -50,7 +50,7 @@ angular.module 'angular-flot', []
                 else
                     plot = do init
 
-            scope.$watch 'dataset', onDatasetChanged, true
+            scope.$watchCollection 'dataset', onDatasetChanged, true
 
             onOptionsChanged = ->
                 plot = do init

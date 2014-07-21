@@ -45,7 +45,7 @@ angular.module('angular-flot', []).directive('flot', function() {
           return plot = init();
         }
       };
-      scope.$watch('dataset', onDatasetChanged, true);
+      scope.$watchCollection('dataset', onDatasetChanged, true);
       onOptionsChanged = function() {
         return plot = init();
       };
