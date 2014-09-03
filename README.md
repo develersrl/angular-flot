@@ -1,10 +1,13 @@
-angular-flot
-============
+# angular-flot
+
+<img src="https://rawgit.com/develersrl/angular-flot/master/logo.svg" align="right" width="200" height="200"/>
+
+[![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://choosealicense.com/licenses/mit/)
 
 An Angular directive which wraps [Flotcharts](http://www.flotcharts.org/).
 
 
-# Installation
+## Installation
 
 This library is provided as a Bower component and NPM module:
 
@@ -12,11 +15,11 @@ This library is provided as a Bower component and NPM module:
 - NPM: `npm install angular-flot`
 
 
-# How to Use
+## How to Use
 
-First, make sure to add Flotchart to your project, as explained in [Flotchart's
-ReadMe](https://github.com/flot/flot/blob/master/README.md) since we don't bundle Flotcharts for
-you.
+First, make sure to add Flotchart to your project, as explained in
+[Flotchart's ReadMe](https://github.com/flot/flot/blob/master/README.md) since we don't bundle
+Flotcharts for you.
 
 Add `angular-flot` to the list of dependencies in your Angular.JS application:
 
@@ -45,7 +48,7 @@ In your view or template, add the `flot` directive, making sure to specify both 
 ```
 
 
-# Reference
+## Reference
 
 Directive attributes:
 
