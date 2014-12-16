@@ -47,6 +47,13 @@ In your view or template, add the `flot` directive, making sure to specify both 
 <flot dataset="myData" options="myChartOptions"></flot>
 ```
 
+The Flot chart is created in a `div` element as a child of the `flot` directive. To select the DOM
+element using jQuery, just do as follows (you might have to adjust the example based on the contents
+of your page):
+
+```javascript
+$('flot > div');
+```
 
 ## Reference
 
