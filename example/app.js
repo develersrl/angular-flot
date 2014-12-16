@@ -1,10 +1,11 @@
 var app = angular.module('app', ['angular-flot']);
 
 app.controller('FlotCtrl', ['$scope', function($scope) {
-  $scope.dataset = [{ data: [], yaxis: 1 }];
+  $scope.dataset = [{ data: [], yaxis: 1, label: "sin" }];
   $scope.options = {
     legend: {
-      show: false
+      container: "#legend",
+      show: true
     }
   };
 
