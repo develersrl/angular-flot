@@ -10,6 +10,7 @@ angular.module 'angular-flot', []
             #
             # Options
             #
+
             plot = null
             width = attributes.width || '100%'
             height = attributes.height || '100%'
