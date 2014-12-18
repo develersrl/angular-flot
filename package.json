@@ -9,6 +9,6 @@
         "prepublish": "coffee -c -b angular-flot.coffee"
     },
     "devDependencies": {
-        "coffee-script": "~1.7.1"
+        "coffee-script": "~1.8.0"
     }
 }
