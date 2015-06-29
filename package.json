@@ -4,11 +4,5 @@
     "description": "An Angular directive to wrap Flotcharts.",
     "main": "angular-flot.js",
     "author": "Lorenzo Villani <lvillani@develer.com>",
-    "license": "MIT",
-    "scripts": {
-        "prepublish": "./node_modules/coffee-script/bin/coffee -c -b angular-flot.coffee"
-    },
-    "devDependencies": {
-        "coffee-script": "~1.8.0"
-    }
+    "license": "MIT"
 }
