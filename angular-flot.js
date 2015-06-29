@@ -113,4 +113,4 @@ angular.module('angular-flot', []).directive('flot', function () {
       })
     }
   }
-})
+});
