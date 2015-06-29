@@ -20,6 +20,25 @@ app.controller('FlotCtrl', ['$scope', function ($scope) {
   }
 
   //
+  // Categories Example
+  //
+
+  $scope.categoriesDataset = [[['January', 10], ['February', 8], ['March', 4], ['April', 13], ['May', 17], ['June', 9]]]
+  $scope.categoriesOptions = {
+    series: {
+      bars: {
+        show: true,
+        barWidth: 0.6,
+        align: 'center'
+      }
+    },
+    xaxis: {
+      mode: 'categories',
+      tickLength: 0
+    }
+  }
+
+  //
   // Pie Chart Example
   //
 
