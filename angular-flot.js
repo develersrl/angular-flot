@@ -9,7 +9,9 @@ angular.module('angular-flot', []).directive('flot', function () {
     scope: {
       dataset: '=',
       options: '=',
-      callback: '='
+      callback: '=',
+      onPlotClick: '&',
+      onPlotHover: '&'
     },
     link: function (scope, element, attributes) {
       var plot = null
@@ -52,6 +54,30 @@ angular.module('angular-flot', []).directive('flot', function () {
       }
 
       //
+      // Events
+      //
+
+      plotArea.on('plotclick', function onPlotClick (event, pos, item) {
+        scope.$apply(function onApplyPlotClick () {
+          scope.onPlotClick({
+            event: event,
+            pos: pos,
+            item: item
+          })
+        })
+      })
+
+      plotArea.on('plothover', function onPlotHover (event, pos, item) {
+        scope.$apply(function onApplyPlotHover () {
+          scope.onPlotHover({
+            event: event,
+            pos: pos,
+            item: item
+          })
+        })
+      })
+
+      //
       // Watches
       //
 
@@ -79,6 +105,9 @@ angular.module('angular-flot', []).directive('flot', function () {
       //
 
       element.on('$destroy', function onDestroy () {
+        plotArea.off('plotclick')
+        plotArea.off('plothover')
+
         unwatchDataset()
         unwatchOptions()
       })

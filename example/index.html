@@ -17,6 +17,12 @@
         <!-- Pie Chart -->
         <hr>
         <flot dataset="pieDataset" options="pieOptions" height="480px"></flot>
+
+        <!-- Events -->
+        <hr>
+        <flot dataset="eventDataset" options="eventOptions" height="480px"
+            on-plot-click="onEventExampleClicked(event, pos, item)"
+            on-plot-hover="onEventExampleHover(event, pos, item)"></flot>
     </div>
 
     <!-- jQuery + Flot + Angular -->

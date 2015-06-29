@@ -1,3 +1,4 @@
+/* global alert */
 /* global angular */
 
 var app = angular.module('app', ['angular-flot'])
@@ -58,5 +59,24 @@ app.controller('FlotCtrl', ['$scope', function ($scope) {
       label: 'Series' + (i + 1),
       data: Math.floor(Math.random() * 100) + 1
     }
+  }
+
+  //
+  // Event example
+  //
+
+  $scope.eventDataset = angular.copy($scope.categoriesDataset)
+  $scope.eventOptions = angular.copy($scope.categoriesOptions)
+  $scope.eventOptions.grid = {
+    clickable: true,
+    hoverable: true
+  }
+
+  $scope.onEventExampleClicked = function (event, pos, item) {
+    alert('Click! ' + event.timeStamp + ' ' + pos.pageX + ' ' + pos.pageY)
+  }
+
+  $scope.onEventExampleHover = function (event, pos, item) {
+    console.log('Hover! ' + event.timeStamp + ' ' + pos.pageX + ' ' + pos.pageY)
   }
 }])
