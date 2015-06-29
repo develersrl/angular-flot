@@ -35,17 +35,19 @@ angular.module('angular-flot', []).directive('flot', function () {
       }
 
       var plotArea = $(element.children()[0])
+
       plotArea.css({
         width: width,
         height: height
       })
 
       var init = function () {
-        var plotObj
-        plotObj = $.plot(plotArea, scope.dataset, scope.options)
+        var plotObj = $.plot(plotArea, scope.dataset, scope.options)
+
         if (scope.callback) {
           scope.callback(plotObj)
         }
+
         return plotObj
       }
 
