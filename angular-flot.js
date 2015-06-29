@@ -6,7 +6,9 @@ angular.module('angular-flot', []).directive('flot', function() {
     scope: {
       dataset: '=',
       options: '=',
-      callback: '='
+      callback: '=',
+      onClickEvent:'&',
+      onHoverEvent:'&'
     },
     link: function(scope, element, attributes) {
       var height, init, onDatasetChanged, onOptionsChanged, plot, plotArea, width, _ref, _ref1;
@@ -39,6 +41,16 @@ angular.module('angular-flot', []).directive('flot', function() {
         }
         return plotObj;
       };
+	  element.bind('plotclick', function(event,pos,item){
+        if (item && scope.onClickEvent) {
+          scope.onClickEvent({event: event, pos: pos, item: item});
+        }
+      });
+      element.bind('plothover', function (event, pos, item) {
+        if (item && scope.onHoverEvent) {
+          scope.onHoverEvent({event: event, pos: pos, item: item});
+        }
+      });
       onDatasetChanged = function(dataset) {
         if (plot) {
           plot.setData(dataset);

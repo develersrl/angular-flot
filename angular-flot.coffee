@@ -6,6 +6,8 @@ angular.module 'angular-flot', []
             dataset: '='
             options: '='
             callback: '='
+            onClickEvent:'&'
+            onHoverEvent:'&'
         link: (scope, element, attributes) ->
             #
             # Options
@@ -62,3 +64,18 @@ angular.module 'angular-flot', []
                 plot = do init
 
             scope.$watch 'options', onOptionsChanged, true
+
+            element.bind 'plotclick', (event, pos, item) ->
+                if item and scope.onClickEvent
+                    scope.onClickEvent
+                        event: event
+                        pos: pos
+                        item: item
+                return
+            element.bind 'plothover', (event, pos, item) ->
+                if item and scope.onHoverEvent
+                    scope.onHoverEvent
+                        event: event
+                        pos: pos
+                        item: item
+                return

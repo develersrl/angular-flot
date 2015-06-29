@@ -65,3 +65,6 @@ Directive attributes:
   <https://github.com/flot/flot/blob/master/API.md#plot-options> for more information.
 * `width`: Chart width, e.g.: "100%" or "350px".
 * `height`: Chart height, e.g.: "100%" or "100px".
+* 'onClickEvent': callback function for the 'plotclick' event,
+* 'onHoverEvent': callback function for the 'plothover' event.
+* The callbacks exposes the event,pos,item arguments as describe in the flot project. See <https://github.com/flot/flot/blob/master/API.md#data-format> for more information.
