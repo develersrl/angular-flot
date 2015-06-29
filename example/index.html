@@ -6,7 +6,7 @@
 </head>
 <body>
     <div ng-controller="FlotCtrl">
-        <flot dataset="dataset" options="options" height="480px"></flot>
+        <flot dataset="dataset" options="options" height="480px" on-click-event="onClick(event,pos,item)"></flot>
         <div id="legend" style="width: 200px; height: 200px;"></div>
     </div>
 
