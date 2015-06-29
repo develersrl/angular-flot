@@ -6,8 +6,13 @@
 </head>
 <body>
     <div ng-controller="FlotCtrl">
+        <!-- Standard Chart -->
         <flot dataset="dataset" options="options" height="480px"></flot>
         <div id="legend" style="width: 200px; height: 200px;"></div>
+        <hr>
+
+        <!-- Pie Chart -->
+        <flot dataset="pieDataset" options="pieOptions" height="480px"></flot>
     </div>
 
     <!-- jQuery + Flot + Angular -->
@@ -16,6 +21,7 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular.min.js"></script>
 
     <!-- Flot Plugins -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.pie.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.resize.min.js"></script>
 
     <!-- Angular Flot + Example -->
