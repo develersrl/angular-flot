@@ -3,7 +3,7 @@
 All notable changes to this project are documented in this file.
 
 
-## 0.0.7 - 2015-06-29
+## 0.0.8 - 2015-06-29
 
 * Added pie chart example.
 * Added categories chart example.
