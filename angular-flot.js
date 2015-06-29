@@ -49,6 +49,10 @@ angular.module('angular-flot', []).directive('flot', function () {
         return plotObj
       }
 
+      //
+      // Watches
+      //
+
       var onDatasetChanged = function (dataset) {
         if (plot) {
           plot.setData(dataset)
@@ -60,13 +64,22 @@ angular.module('angular-flot', []).directive('flot', function () {
         }
       }
 
-      scope.$watch('dataset', onDatasetChanged, true)
+      var unwatchDataset = scope.$watch('dataset', onDatasetChanged, true)
 
       var onOptionsChanged = function () {
         plot = init()
       }
 
-      scope.$watch('options', onOptionsChanged, true)
+      var unwatchOptions = scope.$watch('options', onOptionsChanged, true)
+
+      //
+      // Tear Down
+      //
+
+      element.on('$destroy', function onDestroy () {
+        unwatchDataset()
+        unwatchOptions()
+      })
     }
   }
 })
