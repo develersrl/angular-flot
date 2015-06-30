@@ -3,6 +3,7 @@
 /* global jQuery */
 
 angular.module('angular-flot', []).directive('flot', function () {
+  "use strict";
   return {
     restrict: 'EA',
     template: '<div></div>',
@@ -14,18 +15,18 @@ angular.module('angular-flot', []).directive('flot', function () {
       onPlotHover: '&'
     },
     link: function (scope, element, attributes) {
-      var plot = null
-      var width = attributes.width || '100%'
-      var height = attributes.height || '100%'
+      var plot = null;
+      var width = attributes.width || '100%';
+      var height = attributes.height || '100%';
 
       // Bug: Passing a jQuery object causes an infinite loop within Angular. Fail hard telling
       // users that they should pass us a jQuery expression as string instead.
       if ((((scope.options || {}).legend || {}).container) instanceof jQuery) {
-        throw new Error('Please use a jQuery expression string with the "legend.container" option.')
+        throw new Error('Please use a jQuery expression string with the "legend.container" option.');
       }
 
       if (!scope.dataset) {
-        scope.dataset = []
+        scope.dataset = [];
       }
 
       if (!scope.options) {
@@ -33,25 +34,25 @@ angular.module('angular-flot', []).directive('flot', function () {
           legend: {
             show: false
           }
-        }
+        };
       }
 
-      var plotArea = $(element.children()[0])
+      var plotArea = $(element.children()[0]);
 
       plotArea.css({
         width: width,
         height: height
-      })
+      });
 
       var init = function () {
-        var plotObj = $.plot(plotArea, scope.dataset, scope.options)
+        var plotObj = $.plot(plotArea, scope.dataset, scope.options);
 
         if (scope.callback) {
-          scope.callback(plotObj)
+          scope.callback(plotObj);
         }
 
-        return plotObj
-      }
+        return plotObj;
+      };
 
       //
       // Events
@@ -63,9 +64,9 @@ angular.module('angular-flot', []).directive('flot', function () {
             event: event,
             pos: pos,
             item: item
-          })
-        })
-      })
+          });
+        });
+      });
 
       plotArea.on('plothover', function onPlotHover (event, pos, item) {
         scope.$apply(function onApplyPlotHover () {
@@ -73,9 +74,9 @@ angular.module('angular-flot', []).directive('flot', function () {
             event: event,
             pos: pos,
             item: item
-          })
-        })
-      })
+          });
+        });
+      });
 
       //
       // Watches
@@ -83,34 +84,34 @@ angular.module('angular-flot', []).directive('flot', function () {
 
       var onDatasetChanged = function (dataset) {
         if (plot) {
-          plot.setData(dataset)
-          plot.setupGrid()
+          plot.setData(dataset);
+          plot.setupGrid();
 
-          return plot.draw()
+          return plot.draw();
         } else {
-          plot = init()
+          plot = init();
         }
-      }
+      };
 
-      var unwatchDataset = scope.$watch('dataset', onDatasetChanged, true)
+      var unwatchDataset = scope.$watch('dataset', onDatasetChanged, true);
 
       var onOptionsChanged = function () {
-        plot = init()
-      }
+        plot = init();
+      };
 
-      var unwatchOptions = scope.$watch('options', onOptionsChanged, true)
+      var unwatchOptions = scope.$watch('options', onOptionsChanged, true);
 
       //
       // Tear Down
       //
 
       element.on('$destroy', function onDestroy () {
-        plotArea.off('plotclick')
-        plotArea.off('plothover')
+        plotArea.off('plotclick');
+        plotArea.off('plothover');
 
-        unwatchDataset()
-        unwatchOptions()
-      })
+        unwatchDataset();
+        unwatchOptions();
+      });
     }
-  }
-})
+  };
+});
