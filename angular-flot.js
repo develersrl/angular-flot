@@ -3,6 +3,7 @@
 /* global jQuery */
 
 angular.module('angular-flot', []).directive('flot', function () {
+  "use strict";
   return {
     restrict: 'EA',
     template: '<div></div>',
@@ -21,7 +22,7 @@ angular.module('angular-flot', []).directive('flot', function () {
       // Bug: Passing a jQuery object causes an infinite loop within Angular. Fail hard telling
       // users that they should pass us a jQuery expression as string instead.
       if ((((scope.options || {}).legend || {}).container) instanceof jQuery) {
-        throw new Error('Please use a jQuery expression string with the "legend.container" option.')
+        throw new Error('Please use a jQuery expression string with the "legend.container" option.');
       }
 
       if (!scope.dataset) {
