@@ -3,6 +3,12 @@
 All notable changes to this project are documented in this file.
 
 
+## 0.0.9 - 2015-06-30
+
+* Switch to semistandard-format (that performs semicolon insertion) to reformat source code since
+  the lack of semicolon broke some builds.
+
+
 ## 0.0.8 - 2015-06-29
 
 * Added pie chart example.
