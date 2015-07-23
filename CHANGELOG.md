@@ -3,6 +3,12 @@
 All notable changes to this project are documented in this file.
 
 
+## 0.0.10 - 2015-07-23
+
+* Prevent double initialization when both a dataset and plot options are given. Thanks to @liuce for
+  the patch.
+
+
 ## 0.0.9 - 2015-06-30
 
 * Switch to semistandard-format (that performs semicolon insertion) to reformat source code since
