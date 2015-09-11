@@ -100,6 +100,18 @@ angular.module('angular-flot', []).directive('flot', function () {
 
       var unwatchDataset = scope.$watch('dataset', onDatasetChanged, true);
 
+      attributes.$observe('width', function(value) {
+        if (!value) return;
+        width = value;
+        plotArea.css('width', value);
+      });
+      
+      attributes.$observe('height', function(value) {
+        if (!value) return;
+        height = value;
+        plotArea.css('height', value);
+      });
+
       //
       // Tear Down
       //
