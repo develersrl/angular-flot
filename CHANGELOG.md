@@ -3,6 +3,12 @@
 All notable changes to this project are documented in this file.
 
 
+## 0.0.11 - 2015-09-12
+
+* Watch width and height attributes. Contributed by @gudubeth.
+
+
+
 ## 0.0.10 - 2015-07-23
 
 * Prevent double initialization when both a dataset and plot options are given. Thanks to @liuce for
