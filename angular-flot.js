@@ -105,7 +105,7 @@ angular.module('angular-flot', []).directive('flot', function () {
         width = value;
         plotArea.css('width', value);
       });
-      
+
       attributes.$observe('height', function(value) {
         if (!value) return;
         height = value;
@@ -119,7 +119,7 @@ angular.module('angular-flot', []).directive('flot', function () {
       element.on('$destroy', function onDestroy () {
         plotArea.off('plotclick');
         plotArea.off('plothover');
-
+        plot.shutdown();
         unwatchDataset();
         unwatchOptions();
       });
