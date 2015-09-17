@@ -3,6 +3,11 @@
 All notable changes to this project are documented in this file.
 
 
+## 0.0.13 - 2015-09-17
+
+* Properly destroy the plot when the directive is being destroyed. Contributed by @Botffy.
+
+
 ## 0.0.11 - 2015-09-12
 
 * Watch width and height attributes. Contributed by @gudubeth.
