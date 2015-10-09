@@ -11,7 +11,8 @@ angular.module('angular-flot', []).directive('flot', function () {
       options: '=',
       callback: '=',
       onPlotClick: '&',
-      onPlotHover: '&'
+      onPlotHover: '&',
+      onPlotSelected: '&'
     },
     link: function (scope, element, attributes) {
       var plot = null;
@@ -63,6 +64,15 @@ angular.module('angular-flot', []).directive('flot', function () {
             event: event,
             pos: pos,
             item: item
+          });
+        });
+      });
+
+      plotArea.on('plotselected', function onPlotSelected (event, ranges) {
+        scope.$apply(function onApplyPlotSelected () {
+          scope.onPlotSelected({
+            event: event,
+            ranges: ranges
           });
         });
       });
@@ -119,6 +129,8 @@ angular.module('angular-flot', []).directive('flot', function () {
       element.on('$destroy', function onDestroy () {
         plotArea.off('plotclick');
         plotArea.off('plothover');
+        plotArea.off('plotselected');
+
         plot.shutdown();
         unwatchDataset();
         unwatchOptions();
