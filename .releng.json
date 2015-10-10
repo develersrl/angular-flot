@@ -1,1 +1,8 @@
-{"version":"0.0.13","push":"git p ; git p --tags ; npm publish"}
+{
+  "push": [
+    "sh",
+    "-c",
+    "git p ; git p --tags ; npm publish"
+  ],
+  "version": "0.0.14"
+}

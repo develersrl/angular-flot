@@ -1,7 +1,7 @@
 {
   "name": "angular-flot",
   "main": "angular-flot.js",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "authors": [
     "Lorenzo Villani <lvillani@develer.com>"
   ],
