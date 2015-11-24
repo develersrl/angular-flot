@@ -2,9 +2,11 @@
 
 <img src="https://rawgit.com/develersrl/angular-flot/master/logo.svg" align="right" width="200" height="200"/>
 
+[![Bower](https://img.shields.io/bower/v/angular-flot.svg?style=flat)](https://github.com/develersrl/angular-flot)
+[![npm](https://img.shields.io/npm/v/angular-flot.svg?style=flat)](https://www.npmjs.com/package/angular-flot)
 [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://choosealicense.com/licenses/mit/)
 
-An Angular directive which wraps [Flotcharts](http://www.flotcharts.org/).
+An Angular directive that wraps [Flotcharts](http://www.flotcharts.org/).
 
 
 ## Installation
