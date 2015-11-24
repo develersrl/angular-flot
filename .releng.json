@@ -1,8 +1,5 @@
 {
-  "push": [
-    "sh",
-    "-c",
-    "git p ; git p --tags ; npm publish"
-  ],
+  "bump": "mv .git .git2 \u0026\u0026 bower version $RELENG_VERSION \u0026\u0026 npm version $RELENG_VERSION \u0026\u0026 mv .git2 .git",
+  "push": "git push \u0026\u0026 git push --tags \u0026\u0026 npm publish",
   "version": "0.0.14"
 }
