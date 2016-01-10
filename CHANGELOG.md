@@ -3,6 +3,11 @@
 All notable changes to this project are documented in this file.
 
 
+## 0.0.16 - 2016-01-10
+
+* No functional changes. Bumped copyright year and added license header to angular-flot.js.
+
+
 ## 0.0.15 - 2015-11-24
 
 * Use `$timeout` instead of `scope.$apply` in event handlers. See also issue #30.
