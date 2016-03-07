@@ -69,3 +69,4 @@ Directive attributes:
 * `on-plot-hover`: callback function for the 'plothover' event.
 * `width`: Chart width, e.g.: "100%" or "350px".
 * `height`: Chart height, e.g.: "100%" or "100px".
+* `callback`: callback function with flot object.
