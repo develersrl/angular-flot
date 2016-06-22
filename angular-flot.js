@@ -81,6 +81,11 @@ angular.module('angular-flot', []).directive('flot', ['$timeout', function ($tim
       //
       // Events
       //
+      
+      // Window Resize
+      $(window).resize(function() {
+        plot = init();
+      });
 
       plotArea.on('plotclick', function onPlotClick (event, pos, item) {
         $timeout(function onApplyPlotClick () {
@@ -151,6 +156,9 @@ angular.module('angular-flot', []).directive('flot', ['$timeout', function ($tim
       //
 
       element.on('$destroy', function onDestroy () {
+        
+        $(window).off('resize'); // remove the handler added earlier
+        
         plotArea.off('plotclick');
         plotArea.off('plothover');
         plotArea.off('plotselected');
