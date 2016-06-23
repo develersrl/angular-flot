@@ -155,7 +155,7 @@ angular.module('angular-flot', []).directive('flot', ['$timeout', function ($tim
         plotArea.off('plothover');
         plotArea.off('plotselected');
 
-        plot.shutdown();
+        plot.destroy();
         unwatchDataset();
         unwatchOptions();
       });
