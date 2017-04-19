@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented in this file.
 
+## Unreleased
+
+### Added
+
+* Minified version of `angular-flot.js`.
+
 
 ## 0.0.16 - 2016-01-10
 

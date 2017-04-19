@@ -4,5 +4,11 @@
   "description": "An Angular directive to wrap Flotcharts.",
   "main": "angular-flot.js",
   "author": "Lorenzo Villani <lvillani@develer.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "uglifyjs": "^2.4.10"
+  },
+  "scripts": {
+    "prepublish": "uglifyjs angular-flot.js -o angular-flot.min.js"
+  }
 }
